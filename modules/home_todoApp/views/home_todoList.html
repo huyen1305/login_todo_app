@@ -1,0 +1,28 @@
+<h1> Home</h1>
+<div class="container">
+    <h2>my todo list</h2>
+    <form ng-submit="addTodo()">
+        <input class="form-control" type="text" ng-model="input" placeholder="enter todo list"  autofocus>
+    </form>
+    <br>
+
+    <ul class="list-group" class="todo-list">
+        <input type="checkbox" ng-model="allChecked" ng-change="checkAll()" > mark all
+        <li class="list-group-item" ng-repeat="todo in todos | filter: FILTER">
+            <input type="checkbox" ng-model="todo.done" ng-change="changeTotalTodos(todo)">
+            <input class="inputTodo" ng-dblclick="editTodo()" ng-readonly="readonly" ng-submit="saveEdit()" ng-class = "{deleted: todo.done}" value="{{todo.content}}">
+            <button class="btn btn-delete pull-right" ng-click="remove($index)">delete</button>
+        </li>
+    </ul>
+    <button class="btn btn-default" ng-click="status='ALL'"> All</button>
+    <button class="btn btn-default" ng-click="status='ACTIVE'"> Active</button>
+    <button class="btn btn-default" ng-click="status='COMPLETED'">Completed</button>
+    <BUTTON class="btn btn-default" ng-click="removeCompleted()" >remove completed</BUTTON>
+    <h2 class="row">You got
+        <span id="todo-count"><span class="emphasis">{{totalTodos()}}</span>
+                <ng-pluralize count="totalTodos()" when="{one: 'thing', other: 'things' }"></ng-pluralize>
+            </span>to do
+    </h2>
+    <p class="pull-right"> <a href="#/">Logout</a> </p>
+    <a ui-sref="#/register">Register</a>
+</div>

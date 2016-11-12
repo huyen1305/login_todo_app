@@ -1,0 +1,36 @@
+.todo-bar {
+	display: inline;
+	float: left;
+	margin-top: 100px;
+}
+
+.row {
+	margin: 0px 100px;
+}
+.todo-list li {
+	list-style: none;
+}
+.deleted {
+	text-decoration: line-through;
+	color:grey;
+}
+.btn-delete {
+	color: #fff;
+	background-color: grey;
+	line-height: 1;
+}
+.btn-delete:hover {
+	background-color: red;
+	color: white;
+	line-height: 1;
+}
+.emphasis {
+	font-family: sans-serif;
+  	font-size: 4em;
+}
+.row {
+	text-align: center;
+}
+.inputTodo {
+	border:none;
+}
